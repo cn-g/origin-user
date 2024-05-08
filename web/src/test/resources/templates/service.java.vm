@@ -1,0 +1,20 @@
+package ${package.Service};
+${package.Entity}
+.${entity};
+    ${package.Mapper}
+        .${table.mapperName};
+    ${superServiceImplClassPackage}
+        ;
+
+/**
+ * <p>
+ * $!{table.comment} 服务类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Service
+public class ${entity}Service extends ${superServiceImplClass}<${table.mapperName}, ${entity}> {
+
+        }

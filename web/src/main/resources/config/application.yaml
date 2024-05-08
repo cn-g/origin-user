@@ -1,0 +1,8 @@
+#设置引入的环境变量
+spring:
+  profiles:
+    include: swagger,web,pub
+
+# 端口
+server:
+  port: 8004

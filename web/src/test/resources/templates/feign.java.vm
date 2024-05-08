@@ -1,0 +1,27 @@
+package ${package.Feign}import org.springframework.cloud.openfeign.FeignClient;
+
+import io.swagger.annotations.Api;
+
+;
+${package.Constants}
+        .${package.applicationTip}Constants;
+#if(${superControllerClassPackage})
+    ${superControllerClassPackage}
+        ;
+#end
+
+/**
+ * <p>
+ * $!{table.comment} feign接口实现类
+ * 注意:[禁止]在这里添加RequestMapping
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+
+@Api(value = "$!{table.comment}" , tags = "$!{table.comment}")
+@FeignClient(value = ${package.applicationTip}Constants.APPLICATION_NAME)
+public interface  ${entity}Feign {
+
+}

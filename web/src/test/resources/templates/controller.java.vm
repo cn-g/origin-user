@@ -1,0 +1,24 @@
+package ${package.Controller}import javax.annotation.Resource;
+
+import org.springframework.web.bind.annotation.RestController;
+
+;
+${package.Feign}
+.${entity}Feign;
+    ${package.Service}
+        .${entity}Service;
+
+/**
+ * <p>
+ * $!{table.comment} feign接口实现类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@RestController
+public class ${entity}FeignController implements ${entity}Feign {
+
+    @Resource
+        ${entity}Service baseService;
+}

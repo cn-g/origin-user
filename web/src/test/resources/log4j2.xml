@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--日志级别以及优先级排序: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<configuration>
+    <properties>
+        <!-- 文件输出格式 -->
+        <property name="PATTERN">%highlight{%d{yyyy.MM.dd 'at' HH:mm:ss z} %-5level %class{36} %M() @%L
+            - %msg%n}
+        </property>
+    </properties>
+    <appenders>
+        <Console name="CONSOLE" target="system_out">
+            <PatternLayout pattern="${PATTERN}"/>
+        </Console>
+    </appenders>
+
+    <loggers>
+        <!--需要更低级别的输出在这里配置包名-->
+        <logger name="com.zhuoyuecar" level="debug"></logger>
+        <!--这里设置info,屏蔽其他框架无用的DEBUG信息-->
+        <root level="info">
+            <appenderref ref="CONSOLE"/>
+        </root>
+    </loggers>
+</configuration>

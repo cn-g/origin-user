@@ -1,0 +1,59 @@
+package ${packageInfo}import lombok.Getter;
+
+;
+
+/**
+ * ${comment}
+ *
+ * @author jlf
+ * @date 2020/7/10
+ * @since v1.0
+ */
+@Getter
+public enum ${className} {
+
+    #foreach($field in ${fields})
+            /**
+             * ${field.key} ${field.value}
+             */
+        #if(($!{foreach.index}+1)==$fields.size())
+            ${field.name}(${field.key},"${field.value}");
+        #else
+            ${field.name}(${field.key},"${field.value}"),
+        #end
+    #end
+
+    ${className}(Integer code,String desc){
+        this.code=code;
+        this.desc=desc;
+        }
+
+private Integer code;
+private String desc;
+
+/**
+ * 根据code码获取枚举
+ *
+ * @param code
+ * @return
+ */
+public static ${className} findByCode(Integer code){
+        return Stream.of(${className}.values()).filter(c->c.getCode().equals(code)).findFirst().orElse(null);
+        }
+
+/**
+ * 验证code码
+ *
+ * @param code
+ * @return
+ */
+public boolean checkCode(Integer code){
+        if(this.code==null){
+        if(code==null){
+        return true;
+        }
+        return false;
+        }
+        return this.code.equals(code);
+        }
+        }

@@ -1,0 +1,14 @@
+package ${package.Constants};
+
+/**
+ * <p>
+ * 常量值
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+public class ${package.applicationTip}Constants {
+
+    public final static String APPLICATION_NAME = "${package.applicationName}";
+}
