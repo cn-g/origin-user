@@ -1,0 +1,19 @@
+#spring:
+#  main:
+#    allow-bean-definition-overriding: true
+#  # 服务名称
+#  application:
+#    name: origin-user
+#    chineseName: 用户模块
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/mall?characterEncoding=utf-8&serverTimezone=UTC
+#    username: root
+#    password: lwj5201314
+
+system:
+  web:
+    # 系统版本号
+    version: @project.version@-@current.time@
+server:
+  port: 8004

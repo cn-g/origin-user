@@ -1,8 +1,8 @@
+server:
+  port: 8004
 spring:
   main:
     allow-bean-definition-overriding: true
-  profiles:
-    active: @profiles.active@
   # 服务名称
   application:
     name: origin-user
@@ -19,20 +19,14 @@ spring:
         group: ${spring.cloud.nacos.discovery.group}
         file-extension: yaml
         shared-configs:
-          # 服务化的默认配置,不能少
-          - data-id: shared_soa.yaml
-            group: ${spring.cloud.nacos.config.group}
-            refresh: true
           # mysql共享配置
-          - data-id: shared_mysql.yaml
+          - data-id: share_mysql.yaml
             group: ${spring.cloud.nacos.config.group}
             refresh: true
           # redis共享配置
-          - data-id: shared_redis.yaml
+          - data-id: share_redis.yaml
             group: ${spring.cloud.nacos.config.group}
             refresh: true
-
-system:
-  web:
-    # 系统版本号
-    version: @project.version@-@current.time@
+  config:
+    import:
+      - optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
